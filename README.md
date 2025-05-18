@@ -8,3 +8,4 @@ To get started, take a look at src/app/page.tsx.
 "# Verdant-Eye-Smart" 
 "# Verdant-Eye" 
 "# Verdant-Eye--" 
+"# Verdant-Eye--" 
