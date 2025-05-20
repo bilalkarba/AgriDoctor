@@ -16,7 +16,7 @@ export function Footer() {
             {t('footerText')}
           </p>
           <div className="flex space-x-4 rtl:space-x-reverse">
-            <Link href="#" aria-label="Facebook" className="text-muted-foreground hover:text-primary transition-colors">
+            <Link href="https://www.facebook.com/share/19M9jtyXb7/" aria-label="Facebook" className="text-muted-foreground hover:text-primary transition-colors">
               <Facebook size={20} />
             </Link>
             <Link href="#" aria-label="Twitter" className="text-muted-foreground hover:text-primary transition-colors">

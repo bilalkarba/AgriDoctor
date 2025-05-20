@@ -97,13 +97,13 @@ export default function ContactUsPage() {
           <CardContent className="space-y-4">
             <div className="flex items-center space-x-3 rtl:space-x-reverse">
               <Mail className="h-5 w-5 text-primary" />
-              <a href="mailto:soumia.so770717@gmail.com" className="text-muted-foreground hover:text-primary">
-                soumia.so770717@gmail.com
+              <a href="bilalabdo928@gmail.com" className="text-muted-foreground hover:text-primary">
+                bilalabdo928@gmail.com
               </a>
             </div>
             <div className="flex items-center space-x-3 rtl:space-x-reverse">
               <Phone className="h-5 w-5 text-primary" />
-              <span className="text-muted-foreground">+212 612693297</span>
+              <span className="text-muted-foreground">+212 631473062</span>
             </div>
             <div className="flex items-start space-x-3 rtl:space-x-reverse">
               <MapPin className="h-5 w-5 text-primary mt-1" />
