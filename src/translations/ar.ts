@@ -1,6 +1,6 @@
 // src/translations/ar.ts
 const ar = {
-  appName: "عين النبات الخضراء",
+  appName: "طبيب  زراعي",
   navHome: "الرئيسية",
   navPlantCareTips: "نصائح للعناية بالنباتات",
   navAboutUs: "من نحن",

@@ -1,6 +1,6 @@
 // src/translations/en.ts
 const en = {
-  appName: "Verdant Eye",
+  appName: "Agri Doctor",
   navHome: "Home",
   navPlantCareTips: "Plant Care Tips",
   navAboutUs: "About Us",
