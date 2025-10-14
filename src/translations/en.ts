@@ -51,7 +51,7 @@ const en = {
   messageSentSuccess: "Message sent successfully!",
   messageSentError: "Failed to send message. Please try again.",
   
-  footerText: `© ${new Date().getFullYear()} Verdant Eye. All rights reserved.`,
+  footerText: `© ${new Date().getFullYear()} Agri Doctor. All rights reserved.`,
   socialMedia: "Social Media",
   switchCamera: "Switch Camera", // Added
   plantPreview: "Plant preview", // Added for alt text
