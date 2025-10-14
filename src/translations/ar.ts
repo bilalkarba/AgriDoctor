@@ -1,6 +1,6 @@
 // src/translations/ar.ts
 const ar = {
-  appName: "طبيب  زراعي",
+  appName: "طبيب زراعي",
   navHome: "الرئيسية",
   navPlantCareTips: "نصائح للعناية بالنباتات",
   navAboutUs: "من نحن",
@@ -35,8 +35,8 @@ const ar = {
   tip3Title: "التربة الجيدة",
   tip3Content: "استخدم تربة جيدة التصريف وغنية بالمواد العضوية. أعد زرع النباتات عندما تتجاوز حجم وعائها الحالي.",
 
-  aboutUsTitle: "عن عين النبات الخضراء",
-  aboutUsIntro: "عين النبات الخضراء هو مشروع مخصص لمساعدة عشاق النباتات والمزارعين في الحفاظ على صحة نباتاتهم من خلال التكنولوجيا الذكية.",
+  aboutUsTitle: "عن طبيب زراعي",
+  aboutUsIntro: "طبيب زراعي هو مشروع مخصص لمساعدة عشاق النباتات والمزارعين في الحفاظ على صحة نباتاتهم من خلال التكنولوجيا الذكية.",
   aboutUsMission: "مهمتنا",
   aboutUsMissionText: "الاستفادة من الذكاء الاصطناعي لتوفير تشخيصات دقيقة وسهلة الوصول لصحة النباتات، وتعزيز الزراعة المستدامة والذكية.",
   aboutUsTeam: "فريقنا",
@@ -51,10 +51,10 @@ const ar = {
   messageSentSuccess: "تم إرسال الرسالة بنجاح!",
   messageSentError: "فشل إرسال الرسالة. يرجى المحاولة مرة أخرى.",
   
-  footerText: `© ${new Date().getFullYear()}طبيب  زراعي". جميع الحقوق محفوظة.`,
+  footerText: `© ${new Date().getFullYear()} طبيب زراعي. جميع الحقوق محفوظة.`,
   socialMedia: "وسائل التواصل الاجتماعي",
-  switchCamera: "تبديل الكاميرا", // Added
-  plantPreview: "معاينة النبات", // Added for alt text
+  switchCamera: "تبديل الكاميرا",
+  plantPreview: "معاينة النبات",
 };
 
 export default ar;
