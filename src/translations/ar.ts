@@ -51,7 +51,7 @@ const ar = {
   messageSentSuccess: "تم إرسال الرسالة بنجاح!",
   messageSentError: "فشل إرسال الرسالة. يرجى المحاولة مرة أخرى.",
   
-  footerText: `© ${new Date().getFullYear()} عين النبات الخضراء. جميع الحقوق محفوظة.`,
+  footerText: `© ${new Date().getFullYear()}طبيب  زراعي". جميع الحقوق محفوظة.`,
   socialMedia: "وسائل التواصل الاجتماعي",
   switchCamera: "تبديل الكاميرا", // Added
   plantPreview: "معاينة النبات", // Added for alt text
