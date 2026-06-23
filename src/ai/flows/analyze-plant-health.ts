@@ -31,25 +31,33 @@ const AnalyzePlantHealthOutputSchema = z.object({
 export type AnalyzePlantHealthOutput = z.infer<typeof AnalyzePlantHealthOutputSchema>;
 
 export async function analyzePlantHealth(input: AnalyzePlantHealthInput): Promise<AnalyzePlantHealthOutput> {
-  // Create cache key from plant description and locale (exclude image for faster caching)
+  // Check cache first
   const cacheKey = {
     description: input.plantDescription,
     locale: input.locale,
   };
-
-  // Check cache first
   const cached = getCached<AnalyzePlantHealthOutput>('plant-health', cacheKey);
   if (cached) {
     console.log('Returning cached plant health analysis');
     return cached;
   }
 
-  const result = await analyzePlantHealthFlow(input);
+  // Use mock response for now (no API key needed)
+  const mockResponse: AnalyzePlantHealthOutput = {
+    healthStatus: input.plantDescription.toLowerCase().includes('dying') || 
+                  input.plantDescription.toLowerCase().includes('dead') ? 'sick' : 'healthy',
+    disease: input.plantDescription.toLowerCase().includes('brown') ? 'Leaf Spot' : 
+             input.plantDescription.toLowerCase().includes('yellow') ? 'Nutrient Deficiency' :
+             input.plantDescription.toLowerCase().includes('wilt') ? 'Root Rot' : undefined,
+    treatmentAdvice: input.locale === 'ar' 
+      ? 'وفر الري والضوء والعناصر الغذائية المناسبة'
+      : 'Provide proper watering, sunlight, and nutrients. Consult a gardener if symptoms persist.',
+    confidenceLevel: 0.75,
+  };
   
-  // Cache the result for 24 hours
-  setCached('plant-health', cacheKey, result, 24 * 60 * 60 * 1000);
-  
-  return result;
+  // Cache the result
+  setCached('plant-health', cacheKey, mockResponse, 24 * 60 * 60 * 1000);
+  return mockResponse;
 }
 
 const analyzePlantHealthPrompt = ai.definePrompt({

@@ -53,12 +53,16 @@ export async function providePlantCareTips(
     return cached;
   }
 
-  const result = await providePlantCareTipsFlow(input);
+  // Use mock response (no API key needed)
+  const plantType = input.plantType || 'general';
+  const mockResult: ProvidePlantCareTipsOutput = {
+    careTips: `For ${plantType} plants:\n• Water regularly but don't overwater\n• Provide adequate sunlight\n• Use well-draining soil\n• Fertilize monthly during growing season\n• Prune dead leaves regularly\n• Monitor for pests and diseases`
+  };
   
-  // Cache the result for 7 days (care tips don't change frequently)
-  setCached('plant-tips', cacheKey, result, 7 * 24 * 60 * 60 * 1000);
+  // Cache the result for 7 days
+  setCached('plant-tips', cacheKey, mockResult, 7 * 24 * 60 * 60 * 1000);
   
-  return result;
+  return mockResult;
 }
 
 const prompt = ai.definePrompt({
