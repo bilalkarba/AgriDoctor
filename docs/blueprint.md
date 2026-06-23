@@ -1,4 +1,4 @@
-# **App Name**: Verdant Eye
+# **App Name**: Agre Doctor
 
 ## Core Features:
 

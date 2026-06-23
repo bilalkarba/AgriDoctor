@@ -17,7 +17,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: 'Verdant Eye',
+  title: 'Agre Doctor',
   description: 'Analyze plant health with AI',
   icons: null, // This line ensures no favicon tags are generated
 };

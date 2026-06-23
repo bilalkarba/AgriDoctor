@@ -35,8 +35,8 @@ const en = {
   tip3Title: "Good Soil",
   tip3Content: "Use well-draining soil rich in organic matter. Repot plants when they outgrow their current container.",
 
-  aboutUsTitle: "About Verdant Eye",
-  aboutUsIntro: "Verdant Eye is a project dedicated to helping plant enthusiasts and farmers maintain healthy plants through smart technology.",
+  aboutUsTitle: "About Agre Doctor",
+  aboutUsIntro: "Agre Doctor is a project dedicated to helping plant enthusiasts and farmers maintain healthy plants through smart technology.",
   aboutUsMission: "Our Mission",
   aboutUsMissionText: "To leverage AI to provide accessible and accurate plant health diagnostics, promoting sustainable and intelligent agriculture.",
   aboutUsTeam: "Our Team",
