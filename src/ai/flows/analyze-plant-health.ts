@@ -9,6 +9,7 @@
 
 import {ai} from '@/ai/genkit';
 import {z} from 'genkit';
+import { getCached, setCached } from '@/lib/apiCache';
 
 const AnalyzePlantHealthInputSchema = z.object({
   photoDataUri: z
@@ -30,7 +31,25 @@ const AnalyzePlantHealthOutputSchema = z.object({
 export type AnalyzePlantHealthOutput = z.infer<typeof AnalyzePlantHealthOutputSchema>;
 
 export async function analyzePlantHealth(input: AnalyzePlantHealthInput): Promise<AnalyzePlantHealthOutput> {
-  return analyzePlantHealthFlow(input);
+  // Create cache key from plant description and locale (exclude image for faster caching)
+  const cacheKey = {
+    description: input.plantDescription,
+    locale: input.locale,
+  };
+
+  // Check cache first
+  const cached = getCached<AnalyzePlantHealthOutput>('plant-health', cacheKey);
+  if (cached) {
+    console.log('Returning cached plant health analysis');
+    return cached;
+  }
+
+  const result = await analyzePlantHealthFlow(input);
+  
+  // Cache the result for 24 hours
+  setCached('plant-health', cacheKey, result, 24 * 60 * 60 * 1000);
+  
+  return result;
 }
 
 const analyzePlantHealthPrompt = ai.definePrompt({

@@ -11,6 +11,7 @@
 
 import {ai} from '@/ai/genkit';
 import {z} from 'genkit';
+import { getCached, setCached } from '@/lib/apiCache';
 
 const ProvidePlantCareTipsInputSchema = z.object({
   plantType: z
@@ -40,7 +41,24 @@ export type ProvidePlantCareTipsOutput = z.infer<
 export async function providePlantCareTips(
   input: ProvidePlantCareTipsInput
 ): Promise<ProvidePlantCareTipsOutput> {
-  return providePlantCareTipsFlow(input);
+  const cacheKey = {
+    plantType: input.plantType || 'general',
+    problem: input.problem || 'maintenance',
+  };
+
+  // Check cache first
+  const cached = getCached<ProvidePlantCareTipsOutput>('plant-tips', cacheKey);
+  if (cached) {
+    console.log('Returning cached plant care tips');
+    return cached;
+  }
+
+  const result = await providePlantCareTipsFlow(input);
+  
+  // Cache the result for 7 days (care tips don't change frequently)
+  setCached('plant-tips', cacheKey, result, 7 * 24 * 60 * 60 * 1000);
+  
+  return result;
 }
 
 const prompt = ai.definePrompt({
